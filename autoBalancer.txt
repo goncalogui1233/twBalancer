@@ -1,0 +1,20 @@
+// ==UserScript==
+// @name         auto_balancer
+// @author       fmthemaster
+// @match https://*/*screen=settings&mode=ref&source=bottom_menu
+// @grant        none
+// @version 0.1
+// @description To add in Tampermonkey and have fun
+// ==/UserScript==
+
+//Note - This script will apear on invite player page, when opened from the bottombar.
+//To change the page where it appears, just change the match attribute above.
+
+
+var atualizarPagina = 1;
+var settings = { "highFarm": 30000, "lowPoints": 3500, "builtOutPercentage": 0.25, "needsMorePercentage": 0.85 };
+$.getScript("https://shinko-to-kuma.com/scripts/WHBalancerShinkoToKuma.js");
+setTimeout(function(){
+    var res_bts = $("[id='building']");
+    $.each(res_bts, function(key,obj){setTimeout(function(){console.log("sendingrecs");obj.click()}, 400 * key + 10 * Math.random())});
+}, 5000 * (1 + 0.2 * Math.random()));
