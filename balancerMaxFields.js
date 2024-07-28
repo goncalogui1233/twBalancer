@@ -1462,9 +1462,7 @@ function displayEverything() {
                         for (let d = 0; d < merchantOrders.length; d++) {
                             var distance = checkDistance(merchantOrders[d].x, merchantOrders[d].y, villagesData[q].name.match(/(\d+)\|(\d+)/)[1], villagesData[q].name.match(/(\d+)\|(\d+)/)[2]);
 
-                            if(distance >= 20) {
-                                merchantOrders.splice(d, 1);
-                            } else {
+                            if(distance <= 20) {
                                 merchantOrders[d].distance = distance;
                             }
                             
